@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Research Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- LANDING PAGE                                     -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section id="landing" class="page active">
+        <div class="ocean-bg">
+            <div class="light-rays"></div>
+            <div class="bubbles-container">
+                <div class="bubble bubble-1"></div>
+                <div class="bubble bubble-2"></div>
+                <div class="bubble bubble-3"></div>
+                <div class="bubble bubble-4"></div>
+                <div class="bubble bubble-5"></div>
+                <div class="bubble bubble-6"></div>
+                <div class="bubble bubble-7"></div>
+                <div class="bubble bubble-8"></div>
+            </div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+        </div>
+
+        <nav class="landing-nav">
+            <div class="nav-logo">
+                <div class="logo-icon">◎</div>
+                <span>AGENTIC RESEARCH</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="scrollToAbout(event)">About</a>
+                <a href="#" onclick="scrollToCapabilities(event)">Capabilities</a>
+                <a href="#" onclick="scrollToUseCases(event)">Use Cases</a>
+            </div>
+            <button class="nav-enter" onclick="enterDashboard()">
+                Enter <span>→</span>
+            </button>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-badge">AI-Powered Multi-Agent Research</div>
+            <h1 class="hero-title">
+                <span class="title-line">AGENTIC</span>
+                <span class="title-line">RESEARCH</span>
+            </h1>
+            <p class="hero-subtitle">
+                D I V E &nbsp; D E E P E R &nbsp; <em>I N T O</em> &nbsp; K N O W L E D G E
+            </p>
+            <p class="hero-desc">
+                A multi-agent AI platform that explores, analyses,<br>
+                fact-checks, and brings clarity to complex research.
+            </p>
+            <button class="hero-cta" onclick="enterDashboard()">
+                <span>B E G I N</span>
+                <span class="cta-arrow">→</span>
+            </button>
+        </div>
+
+        <!-- About section -->
+        <div id="about-section" class="landing-section">
+            <div class="section-card glass-card">
+                <h2>About the Platform</h2>
+                <p>The Agentic Research Platform uses a pipeline of 5 specialized AI agents that work together to conduct thorough academic research. Unlike simple chatbots, our agents search the web, read papers, extract findings, cross-reference facts, and synthesize everything into a structured report with citations.</p>
+                <div class="about-agents">
+                    <div class="agent-badge">🧭 Router Agent</div>
+                    <div class="agent-badge">🔍 Research Agent</div>
+                    <div class="agent-badge">📊 Extraction Agent</div>
+                    <div class="agent-badge">✅ Fact-Check Agent</div>
+                    <div class="agent-badge">📝 Synthesis Agent</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Capabilities section -->
+        <div id="capabilities-section" class="landing-section">
+            <div class="section-card glass-card">
+                <h2>Capabilities</h2>
+                <div class="capabilities-grid">
+                    <div class="cap-item">
+                        <span class="cap-icon">🌐</span>
+                        <h4>Web Search</h4>
+                        <p>Searches DuckDuckGo for real-time web results</p>
+                    </div>
+                    <div class="cap-item">
+                        <span class="cap-icon">📄</span>
+                        <h4>Paper Search</h4>
+                        <p>Queries Arxiv for academic research papers</p>
+                    </div>
+                    <div class="cap-item">
+                        <span class="cap-icon">🔬</span>
+                        <h4>Finding Extraction</h4>
+                        <p>Extracts claims, evidence, and methodologies</p>
+                    </div>
+                    <div class="cap-item">
+                        <span class="cap-icon">✅</span>
+                        <h4>Fact Checking</h4>
+                        <p>Cross-references claims with confidence scores</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use Cases section -->
+        <div id="usecases-section" class="landing-section">
+            <div class="section-card glass-card">
+                <h2>Use Cases</h2>
+                <div class="usecases-list">
+                    <div class="usecase">📚 Academic literature review</div>
+                    <div class="usecase">🏢 Company & market research</div>
+                    <div class="usecase">🔍 Fact-checking claims</div>
+                    <div class="usecase">📰 News intelligence reports</div>
+                    <div class="usecase">📊 Competitive analysis</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="corner-text left">
+            <span>RESEARCH</span>
+            <span>REASON</span>
+            <span>DISCOVER</span>
+            <span>TOGETHER</span>
+        </div>
+        <div class="corner-text right">
+            <span>IDEAS</span>
+            <span>FLOW</span>
+            <span>FURTHER</span>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════ -->
+    <!-- DASHBOARD                                        -->
+    <!-- ════════════════════════════════════════════════ -->
+    <section id="dashboard" class="page">
+        <div class="ocean-bg">
+            <div class="light-rays"></div>
+            <div class="bubbles-container">
+                <div class="bubble bubble-1"></div>
+                <div class="bubble bubble-3"></div>
+                <div class="bubble bubble-5"></div>
+                <div class="bubble bubble-7"></div>
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">◎</div>
+                <span>AGENTIC</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-view="home" onclick="navigateTo('home', this, event)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item" data-view="new-research" onclick="navigateTo('new-research', this, event)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                    <span>New Research</span>
+                </a>
+                <a href="#" class="nav-item" data-view="library" onclick="navigateTo('library', this, event)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                    <span>Library</span>
+                    <span class="nav-badge" id="library-count"></span>
+                </a>
+                <a href="#" class="nav-item" data-view="explore" onclick="navigateTo('explore', this, event)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <span>Explore</span>
+                </a>
+                <a href="#" class="nav-item" data-view="settings" onclick="navigateTo('settings', this, event)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="back-to-landing" onclick="goToLanding(event)">← Back to Home</a>
+                <p>Dive deeper.</p>
+                <p>Think clearer.</p>
+                <p>Go further.</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="topbar">
+                <div class="search-bar-mini" onclick="navigateTo('home', document.querySelector('[data-view=home]'))">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <span>Search your research...</span>
+                </div>
+                <div class="topbar-right">
+                    <button class="icon-btn" onclick="navigateTo('library', document.querySelector('[data-view=library]'))">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                    </button>
+                    <div class="avatar">A</div>
+                </div>
+            </div>
+
+            <!-- ── HOME VIEW ─────────────────────── -->
+            <div id="home-view" class="view active">
+                <div class="greeting-card glass-card">
+                    <div class="greeting-text">
+                        <h2 id="greeting-message">Good evening,</h2>
+                        <h3>What would you like to research today?</h3>
+                    </div>
+                    <div class="research-input-container">
+                        <form id="research-form" onsubmit="submitResearch(event)">
+                            <div class="research-input">
+                                <input type="text" id="query-input" placeholder="Ask anything..." autocomplete="off">
+                                <button type="submit" class="submit-btn" id="submit-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="research-options">
+                            <div class="option-pill"><span>Research Mode</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+                            <div class="option-pill"><span>Sources</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+                            <div class="option-pill"><span>Depth</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ideas-section">
+                    <h4>Start with an idea</h4>
+                    <div class="ideas-grid">
+                        <div class="idea-card" onclick="fillQuery('Compare NVIDIA, AMD and Intel in AI accelerators')">
+                            <div class="idea-icon" style="background:rgba(59,130,246,0.15);color:#3b82f6;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+                            <div class="idea-text"><h5>Compare</h5><p>Compare leading AI agent frameworks</p><span class="idea-arrow">→</span></div>
+                        </div>
+                        <div class="idea-card" onclick="fillQuery('What are the latest developments in AI research this week?')">
+                            <div class="idea-icon" style="background:rgba(16,185,129,0.15);color:#10b981;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                            <div class="idea-text"><h5>Current developments</h5><p>Latest in AI research</p><span class="idea-arrow">→</span></div>
+                        </div>
+                        <div class="idea-card" onclick="fillQuery('Explain how transformer attention mechanisms work in LLMs')">
+                            <div class="idea-icon" style="background:rgba(139,92,246,0.15);color:#8b5cf6;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+                            <div class="idea-text"><h5>Explain</h5><p>Break down a complex topic</p><span class="idea-arrow">→</span></div>
+                        </div>
+                        <div class="idea-card" onclick="fillQuery('Find recent research on using LLMs for cybersecurity threat detection')">
+                            <div class="idea-icon" style="background:rgba(245,158,11,0.15);color:#f59e0b;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+                            <div class="idea-text"><h5>Analyse</h5><p>Review a paper or document</p><span class="idea-arrow">→</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── NEW RESEARCH VIEW ─────────────── -->
+            <div id="new-research-view" class="view">
+                <div class="greeting-card glass-card">
+                    <div class="greeting-text">
+                        <h2>🔬 New Research</h2>
+                        <h3>Enter your research question below</h3>
+                    </div>
+                    <div class="research-input-container">
+                        <form onsubmit="submitResearchFrom('new-research-input', event)">
+                            <div class="research-input">
+                                <input type="text" id="new-research-input" placeholder="e.g. What are the major approaches used for detecting deepfakes?" autocomplete="off">
+                                <button type="submit" class="submit-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="tips-section glass-card">
+                    <h4>💡 Tips for better results</h4>
+                    <div class="tips-list">
+                        <div class="tip-item">✦ Be specific — "LLMs for malware detection" works better than "AI security"</div>
+                        <div class="tip-item">✦ Ask comparative questions — "Compare CNN vs RNN for text classification"</div>
+                        <div class="tip-item">✦ Include time frame — "Recent 2024-2025 research on quantum computing"</div>
+                        <div class="tip-item">✦ Mention your domain — "transformer models in medical image analysis"</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── LIBRARY VIEW ──────────────────── -->
+            <div id="library-view" class="view">
+                <div class="library-header">
+                    <h2>📚 Research Library</h2>
+                    <p>Your saved research reports</p>
+                </div>
+                <div id="library-empty" class="empty-state glass-card">
+                    <div class="empty-icon">📭</div>
+                    <h3>No reports yet</h3>
+                    <p>Your research reports will appear here after you run a query.</p>
+                    <button class="action-btn" onclick="navigateTo('home', document.querySelector('[data-view=home]'))">Start Researching →</button>
+                </div>
+                <div id="library-list" class="library-grid"></div>
+            </div>
+
+            <!-- ── EXPLORE VIEW ──────────────────── -->
+            <div id="explore-view" class="view">
+                <div class="library-header">
+                    <h2>🔭 Explore Topics</h2>
+                    <p>Trending research topics to get you started</p>
+                </div>
+                <div class="explore-categories">
+                    <div class="explore-category glass-card">
+                        <h4>🤖 Artificial Intelligence</h4>
+                        <div class="explore-topics">
+                            <span class="topic-chip" onclick="fillAndSubmit('Recent advances in multimodal AI models')">Multimodal AI</span>
+                            <span class="topic-chip" onclick="fillAndSubmit('How do AI agents use tool calling and function calling?')">AI Agents</span>
+                            <span class="topic-chip" onclick="fillAndSubmit('State of AI safety and alignment research 2025')">AI Safety</span>
+                            <span class="topic-chip" onclick="fillAndSubmit('Small language models vs large language models comparison')">SLM vs LLM</span>
+                        </div>
+                    </div>
+                    <div class="explore-category glass-card">
+                        <h4>🔒 Cybersecurity</h4>
+                        <div class="explore-topics">
+                            <span class="topic-chip" onclick="fillAndSubmit('AI-powered threat detection systems research')">AI Threat Detection</span>
+                            <span class="topic-chip" onclick="fillAndSubmit('Deepfake detection methods and current challenges')">Deepfake Detection</span>
+                            <span class="topic-chip" onclick="fillAndSubmit('Zero trust architecture implementation research')">Zero Trust</span>
+                        </div>
+                    </div>
+                    <div class="explore-category glass-card">
+                        <h4>🧬 Science & Engineering</h4>
+                        <div class="explore-topics">
+                            <span class="topic-chip" onclick="fillAndSubmit('Quantum computing applications in drug discovery')">Quantum + Drug Discovery</span>
+                            <span class="topic-chip" onclick="fillAndSubmit('Brain computer interface research 2025')">Brain-Computer Interfaces</span>
+                            <span class="topic-chip" onclick="fillAndSubmit('CRISPR gene editing recent breakthroughs')">CRISPR Advances</span>
+                        </div>
+                    </div>
+                    <div class="explore-category glass-card">
+                        <h4>📊 Business & Tech</h4>
+                        <div class="explore-topics">
+                            <span class="topic-chip" onclick="fillAndSubmit('Compare cloud GPU providers for AI training')">Cloud GPU Comparison</span>
+                            <span class="topic-chip" onclick="fillAndSubmit('Open source AI models vs proprietary models market analysis')">Open vs Closed AI</span>
+                            <span class="topic-chip" onclick="fillAndSubmit('Edge computing vs cloud computing for AI inference')">Edge vs Cloud AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── SETTINGS VIEW ─────────────────── -->
+            <div id="settings-view" class="view">
+                <div class="library-header">
+                    <h2>⚙️ Settings</h2>
+                    <p>Platform configuration and status</p>
+                </div>
+                <div class="settings-grid">
+                    <div class="settings-card glass-card">
+                        <h4>🔌 Platform Status</h4>
+                        <div id="settings-status" class="settings-content">
+                            <div class="status-loading">Checking status...</div>
+                        </div>
+                        <button class="action-btn" onclick="loadHealthStatus()" style="margin-top:16px;">Refresh Status</button>
+                    </div>
+                    <div class="settings-card glass-card">
+                        <h4>🗑️ Data Management</h4>
+                        <div class="settings-content">
+                            <p>Clear all saved research reports from your library.</p>
+                            <button class="action-btn danger" onclick="clearLibrary()">Clear Library</button>
+                        </div>
+                    </div>
+                    <div class="settings-card glass-card">
+                        <h4>ℹ️ About</h4>
+                        <div class="settings-content">
+                            <p><strong>Agentic Research Platform</strong> v1.0</p>
+                            <p>Multi-Agent AI Research & Fact-Checking System</p>
+                            <p style="margin-top:8px;opacity:0.6;">Built with FastAPI • Groq/Ollama • DuckDuckGo • Arxiv</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── LOADING VIEW ──────────────────── -->
+            <div id="loading-view" class="view">
+                <div class="loading-container glass-card">
+                    <div class="loading-header">
+                        <div class="pulse-ring"></div>
+                        <h2>Researching...</h2>
+                        <p id="loading-query"></p>
+                    </div>
+                    <div class="pipeline-steps">
+                        <div class="pipeline-step" id="step-router"><div class="step-indicator"><div class="step-dot"></div><div class="step-line"></div></div><div class="step-content"><h4>🧭 Router Agent</h4><p>Creating research plan & search queries</p></div></div>
+                        <div class="pipeline-step" id="step-research"><div class="step-indicator"><div class="step-dot"></div><div class="step-line"></div></div><div class="step-content"><h4>🔍 Research Agent</h4><p>Searching web & academic papers</p></div></div>
+                        <div class="pipeline-step" id="step-extraction"><div class="step-indicator"><div class="step-dot"></div><div class="step-line"></div></div><div class="step-content"><h4>📊 Extraction Agent</h4><p>Extracting key findings from sources</p></div></div>
+                        <div class="pipeline-step" id="step-factcheck"><div class="step-indicator"><div class="step-dot"></div><div class="step-line"></div></div><div class="step-content"><h4>✅ Fact-Check Agent</h4><p>Cross-referencing claims across sources</p></div></div>
+                        <div class="pipeline-step" id="step-synthesis"><div class="step-indicator"><div class="step-dot"></div></div><div class="step-content"><h4>📝 Synthesis Agent</h4><p>Generating research report</p></div></div>
+                    </div>
+                    <div class="loading-tip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        <span>This may take 1-3 minutes. The agents are working! ☕</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── RESULTS VIEW ──────────────────── -->
+            <div id="results-view" class="view">
+                <div class="results-container">
+                    <div class="results-header glass-card">
+                        <button class="back-btn" onclick="navigateTo('library', document.querySelector('[data-view=library]'))">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                            <span>Library</span>
+                        </button>
+                        <div class="results-meta">
+                            <span id="results-time"></span>
+                            <span id="results-sources"></span>
+                        </div>
+                    </div>
+                    <div class="report-title-card glass-card"><h1 id="report-title"></h1><p id="report-query"></p></div>
+                    <div class="agent-trace glass-card"><h3>⚡ Agent Pipeline Execution</h3><div id="trace-items" class="trace-grid"></div></div>
+                    <div class="report-section glass-card"><h3>📋 Executive Summary</h3><div id="report-summary" class="report-text"></div></div>
+                    <div class="report-section glass-card"><h3>🔬 Key Findings</h3><div id="report-findings"></div></div>
+                    <div class="report-section glass-card"><h3>🔧 Methodology Overview</h3><div id="report-methodology" class="report-text"></div></div>
+                    <div class="report-section glass-card"><h3>✅ Fact-Check Results</h3><div id="report-factchecks"></div></div>
+                    <div class="report-section glass-card"><h3>🔍 Research Gaps Identified</h3><div id="report-gaps"></div></div>
+                    <div class="report-section glass-card"><h3>📚 Sources & Citations</h3><div id="report-sources"></div></div>
+                </div>
+            </div>
+
+            <!-- ── ERROR VIEW ────────────────────── -->
+            <div id="error-view" class="view">
+                <div class="error-container glass-card">
+                    <div class="error-icon">⚠️</div>
+                    <h2>Research Failed</h2>
+                    <p id="error-message"></p>
+                    <button class="retry-btn" onclick="navigateTo('home', document.querySelector('[data-view=home]'))">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script src="/frontend/app.js"></script>
+</body>
+</html>
