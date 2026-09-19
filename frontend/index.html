@@ -6,7 +6,7 @@
     <title>Agentic Research Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=Nunito:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/frontend/style.css">
 </head>
 <body>
@@ -16,26 +16,59 @@
     <!-- ════════════════════════════════════════════════ -->
     <section id="landing" class="page active">
         <div class="ocean-bg">
-            <div class="light-rays"></div>
-            <div class="bubbles-container">
-                <div class="bubble bubble-1"></div>
-                <div class="bubble bubble-2"></div>
-                <div class="bubble bubble-3"></div>
-                <div class="bubble bubble-4"></div>
-                <div class="bubble bubble-5"></div>
-                <div class="bubble bubble-6"></div>
-                <div class="bubble bubble-7"></div>
-                <div class="bubble bubble-8"></div>
-            </div>
-            <div class="particles">
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-            </div>
-        </div>
+    <video
+        class="ocean-video"
+        autoplay
+        muted
+        loop
+        playsinline
+    >
+        <source src="ocean2.mp4" type="video/mp4">
+    </video>
 
+    <div class="ocean-overlay"></div>
+</div>
+
+        <div class="aero-decorations" aria-hidden="true">
+
+    <!-- Covers the baked-in star in the video -->
+    <img
+        class="aero-butterfly-cover"
+        src="green butterfly.png"
+        alt=""
+    >
+
+    <!-- Distant futuristic object with orbital ring -->
+    <div class="aero-globe-wrap">
+        <svg class="aero-ring aero-ring-back" viewBox="0 0 560 560" aria-hidden="true">
+            <ellipse class="aero-ring-path" cx="280" cy="280" rx="315" ry="130" />
+        </svg>
+
+        <img
+            class="aero-globe"
+            src="globe.png"
+            alt=""
+        >
+
+        <svg class="aero-ring aero-ring-front" viewBox="0 0 560 560" aria-hidden="true">
+            <ellipse class="aero-ring-path" cx="280" cy="280" rx="315" ry="130" />
+        </svg>
+
+        <div class="aero-satellite-wrap">
+            <div class="aero-satellite"></div>
+        </div>
+    </div>
+   
+    <!-- Organic Frutiger Aero accent -->
+    <img
+        class="aero-butterfly"
+        src="water butterfly.png"
+        alt=""
+    >
+
+
+
+</div>
         <nav class="landing-nav">
             <div class="nav-logo">
                 <div class="logo-icon">◎</div>
@@ -58,15 +91,15 @@
                 <span class="title-line">RESEARCH</span>
             </h1>
             <p class="hero-subtitle">
-                D I V E &nbsp; D E E P E R &nbsp; <em>I N T O</em> &nbsp; K N O W L E D G E
+                DIVE DEEPER INTO KNOWLEDGE
             </p>
             <p class="hero-desc">
                 A multi-agent AI platform that explores, analyses,<br>
                 fact-checks, and brings clarity to complex research.
             </p>
             <button class="hero-cta" onclick="enterDashboard()">
-                <span>B E G I N</span>
-                <span class="cta-arrow">→</span>
+                <img class="bubble-img" src="bubble2.png" alt="" aria-hidden="true">
+                <span class="bubble-text">B E G I N</span>
             </button>
         </div>
 
@@ -145,15 +178,9 @@
     <!-- DASHBOARD                                        -->
     <!-- ════════════════════════════════════════════════ -->
     <section id="dashboard" class="page">
-        <div class="ocean-bg">
-            <div class="light-rays"></div>
-            <div class="bubbles-container">
-                <div class="bubble bubble-1"></div>
-                <div class="bubble bubble-3"></div>
-                <div class="bubble bubble-5"></div>
-                <div class="bubble bubble-7"></div>
-            </div>
-        </div>
+    <div class="dashboard-bg">
+        <img src="asadal_stock_133.jpg" alt="" class="dashboard-bg-image">
+    </div>
 
         <aside class="sidebar">
             <div class="sidebar-logo">
@@ -162,24 +189,24 @@
             </div>
             <nav class="sidebar-nav">
                 <a href="#" class="nav-item active" data-view="home" onclick="navigateTo('home', this, event)">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                     <img src="yellow bubble flower.png" class="nav-icon" alt="" aria-hidden="true">
                     <span>Home</span>
                 </a>
                 <a href="#" class="nav-item" data-view="new-research" onclick="navigateTo('new-research', this, event)">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                    <img src="yellow star.png" class="nav-icon" alt="" aria-hidden="true">
                     <span>New Research</span>
                 </a>
                 <a href="#" class="nav-item" data-view="library" onclick="navigateTo('library', this, event)">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                    <img src="story_album.png" class="nav-icon" alt="" aria-hidden="true">
                     <span>Library</span>
                     <span class="nav-badge" id="library-count"></span>
                 </a>
                 <a href="#" class="nav-item" data-view="explore" onclick="navigateTo('explore', this, event)">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <img src="search.png" class="nav-icon" alt="" aria-hidden="true">
                     <span>Explore</span>
                 </a>
                 <a href="#" class="nav-item" data-view="settings" onclick="navigateTo('settings', this, event)">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                    <img src="settings.png" class="nav-icon" alt="" aria-hidden="true">
                     <span>Settings</span>
                 </a>
             </nav>
@@ -201,7 +228,82 @@
                     <button class="icon-btn" onclick="navigateTo('library', document.querySelector('[data-view=library]'))">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
                     </button>
-                    <div class="avatar">A</div>
+                    <div class="profile-wrap">
+                        <button
+    class="avatar"
+    id="profile-button"
+    type="button"
+    onclick="toggleProfileMenu(event)"
+    aria-label="Open profile menu"
+    aria-expanded="false"
+    aria-haspopup="menu"
+>
+    <img
+        src="avatar-blue.png"
+        class="avatar-img"
+        id="current-avatar"
+        alt="Profile avatar"
+    >
+</button>
+
+                        <div class="profile-dropdown" id="profile-dropdown" role="menu" aria-hidden="true">
+                            <div class="profile-dropdown-header">
+                                <img src="avatar-blue.png" class="profile-menu-avatar" id="profile-menu-avatar" alt="">
+                                <div class="profile-menu-user">
+                                    <strong>Your profile</strong>
+                                    <span>Agentic account</span>
+                                </div>
+                            </div>
+
+                            <div class="profile-menu-divider"></div>
+
+                            <button class="profile-menu-item" type="button" role="menuitem" onclick="openAvatarPicker()">
+                                <span class="profile-menu-icon">✦</span>
+                                <span>Change avatar</span>
+                            </button>
+                            <button class="profile-menu-item" type="button" role="menuitem" onclick="openAccountSettings()">
+                                <span class="profile-menu-icon">⚙</span>
+                                <span>Account settings</span>
+                            </button>
+
+                            <div class="profile-menu-divider"></div>
+
+                            <button class="profile-menu-item sign-out" type="button" role="menuitem" onclick="signOut()">
+                                <span class="profile-menu-icon">↪</span>
+                                <span>Sign out</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="avatar-picker-overlay" id="avatar-picker-overlay" aria-hidden="true">
+                <div class="avatar-picker" role="dialog" aria-modal="true" aria-labelledby="avatar-picker-title" onclick="event.stopPropagation()">
+                    <div class="avatar-picker-heading">
+                        <div>
+                            <h3 id="avatar-picker-title">Choose your avatar</h3>
+                            <p>Pick your little glossy companion.</p>
+                        </div>
+                        <button class="avatar-picker-close" type="button" aria-label="Close" onclick="closeAvatarPicker()">×</button>
+                    </div>
+
+                    <div class="avatar-grid" id="avatar-grid">
+                        <button class="avatar-choice" type="button" data-avatar="avatar-grey.png" onclick="selectAvatar('avatar-grey.png')" aria-label="Grey avatar"><img src="avatar-grey.png" alt=""></button>
+                        <button class="avatar-choice" type="button" data-avatar="avatar-light-pink.png" onclick="selectAvatar('avatar-light-pink.png')" aria-label="Light pink avatar"><img src="avatar-light-pink.png" alt=""></button>
+                        <button class="avatar-choice" type="button" data-avatar="avatar-yellow.png" onclick="selectAvatar('avatar-yellow.png')" aria-label="Yellow avatar"><img src="avatar-yellow.png" alt=""></button>
+                        <button class="avatar-choice" type="button" data-avatar="avatar-black.png" onclick="selectAvatar('avatar-black.png')" aria-label="Black avatar"><img src="avatar-black.png" alt=""></button>
+                        <button class="avatar-choice" type="button" data-avatar="avatar-blue.png" onclick="selectAvatar('avatar-blue.png')" aria-label="Blue avatar"><img src="avatar-blue.png" alt=""></button>
+                        <button class="avatar-choice" type="button" data-avatar="avatar-green.png" onclick="selectAvatar('avatar-green.png')" aria-label="Green avatar"><img src="avatar-green.png" alt=""></button>
+                        <button class="avatar-choice" type="button" data-avatar="avatar-magenta.png" onclick="selectAvatar('avatar-magenta.png')" aria-label="Magenta avatar"><img src="avatar-magenta.png" alt=""></button>
+                        <button class="avatar-choice" type="button" data-avatar="avatar-purple.png" onclick="selectAvatar('avatar-purple.png')" aria-label="Purple avatar"><img src="avatar-purple.png" alt=""></button>
+                        <button class="avatar-choice" type="button" data-avatar="avatar-light-blue.png" onclick="selectAvatar('avatar-light-blue.png')" aria-label="Light blue avatar"><img src="avatar-light-blue.png" alt=""></button>
+                        <button class="avatar-choice" type="button" data-avatar="avatar-orange.png" onclick="selectAvatar('avatar-orange.png')" aria-label="Orange avatar"><img src="avatar-orange.png" alt=""></button>
+                    </div>
+
+                    <div class="avatar-picker-actions">
+                        <button class="avatar-picker-cancel" type="button" onclick="closeAvatarPicker()">Cancel</button>
+                        <button class="avatar-picker-save" type="button" onclick="saveAvatar()">Save avatar</button>
+                    </div>
                 </div>
             </div>
 

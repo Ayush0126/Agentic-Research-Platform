@@ -419,6 +419,234 @@ function escapeHtml(text) {
 }
 
 // ══════════════════════════════════════════════════════
+//  USER PROFILE / AVATAR
+// ══════════════════════════════════════════════════════
+
+const AVATAR_STORAGE_KEY = "agentic_avatar";
+
+const AVATARS = [
+    "avatar-blue.png",
+    "avatar-grey.png",
+    "avatar-light-pink.png",
+    "avatar-yellow.png",
+    "avatar-black.png",
+    "avatar-green.png",
+    "avatar-magenta.png",
+    "avatar-purple.png",
+    "avatar-light-blue.png",
+    "avatar-orange.png"
+];
+
+
+// ──────────────────────────────────────────────────────
+//  PROFILE DROPDOWN
+// ──────────────────────────────────────────────────────
+
+function toggleProfileMenu(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+
+    const menu = document.getElementById("profile-dropdown");
+    const button = document.getElementById("profile-button");
+
+    if (!menu) return;
+
+    const isOpen = menu.classList.toggle("open");
+
+    if (button) {
+        button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+
+    menu.setAttribute("aria-hidden", isOpen ? "false" : "true");
+}
+
+function closeProfileMenu() {
+    const menu = document.getElementById("profile-dropdown");
+    const button = document.getElementById("profile-button");
+
+    if (menu) {
+        menu.classList.remove("open");
+        menu.setAttribute("aria-hidden", "true");
+    }
+
+    if (button) {
+        button.setAttribute("aria-expanded", "false");
+    }
+}
+
+
+// ──────────────────────────────────────────────────────
+//  AVATAR
+// ──────────────────────────────────────────────────────
+
+function getSelectedAvatar() {
+    return localStorage.getItem(AVATAR_STORAGE_KEY) || "avatar-blue.png";
+}
+
+function updateAvatarDisplay() {
+    const avatar = getSelectedAvatar();
+
+    // Main profile button
+    const avatarImg = document.getElementById("current-avatar");
+    if (avatarImg) {
+        avatarImg.src = avatar;
+    }
+
+    // Avatar shown inside profile dropdown
+    const profileMenuAvatar = document.getElementById("profile-menu-avatar");
+    if (profileMenuAvatar) {
+        profileMenuAvatar.src = avatar;
+    }
+
+    // Highlight selected avatar in picker
+    document.querySelectorAll(".avatar-choice").forEach(choice => {
+        choice.classList.toggle(
+            "selected",
+            choice.dataset.avatar === avatar
+        );
+    });
+}
+
+
+// ──────────────────────────────────────────────────────
+//  OPEN AVATAR PICKER
+// ──────────────────────────────────────────────────────
+
+function openAvatarPicker(event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    closeProfileMenu();
+
+    const overlay = document.getElementById("avatar-picker-overlay");
+
+    if (!overlay) return;
+
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+
+    updateAvatarDisplay();
+}
+
+
+function closeAvatarPicker() {
+    const overlay = document.getElementById("avatar-picker-overlay");
+
+    if (!overlay) return;
+
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+}
+
+
+function selectAvatar(avatar, event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    localStorage.setItem(AVATAR_STORAGE_KEY, avatar);
+
+    updateAvatarDisplay();
+
+    // Update selected avatar styling
+    document.querySelectorAll(".avatar-choice").forEach(choice => {
+        choice.classList.toggle(
+            "selected",
+            choice.dataset.avatar === avatar
+        );
+    });
+}
+
+
+function saveAvatar() {
+    updateAvatarDisplay();
+    closeAvatarPicker();
+}
+
+// ──────────────────────────────────────────────────────
+//  ACCOUNT SETTINGS
+// ──────────────────────────────────────────────────────
+
+function openAccountSettings(event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    closeProfileMenu();
+
+    // Use the Settings view already present in the dashboard
+    navigateTo(
+        "settings",
+        document.querySelector('[data-view="settings"]')
+    );
+}
+
+
+// ──────────────────────────────────────────────────────
+//  SIGN OUT
+// ──────────────────────────────────────────────────────
+
+function signOut(event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    closeProfileMenu();
+    closeAvatarPicker();
+
+    // Forget that this browser has already entered the dashboard
+    localStorage.removeItem("agentic_visited");
+
+    // Return to landing page
+    document.getElementById("dashboard")?.classList.remove("active");
+    document.getElementById("landing")?.classList.add("active");
+}
+
+
+// ──────────────────────────────────────────────────────
+//  OUTSIDE CLICK / ESCAPE
+// ──────────────────────────────────────────────────────
+
+document.addEventListener("click", (event) => {
+
+    const menu = document.getElementById("profile-dropdown");
+    const avatar = document.querySelector(".avatar");
+
+    if (
+        menu &&
+        menu.classList.contains("open") &&
+        !menu.contains(event.target) &&
+        !avatar?.contains(event.target)
+    ) {
+        closeProfileMenu();
+    }
+
+    const picker = document.getElementById("avatar-picker");
+
+    if (
+        picker &&
+        picker.classList.contains("open") &&
+        event.target === picker
+    ) {
+        closeAvatarPicker();
+    }
+});
+
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closeProfileMenu();
+        closeAvatarPicker();
+    }
+});
+
+// ══════════════════════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════════════════════
 
@@ -426,4 +654,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkReturningUser();
     updateGreeting();
     updateLibraryCount();
+
+    // Load saved avatar
+    updateAvatarDisplay();
 });
