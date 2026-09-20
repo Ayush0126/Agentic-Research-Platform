@@ -490,13 +490,13 @@ function updateAvatarDisplay() {
     // Main profile button
     const avatarImg = document.getElementById("current-avatar");
     if (avatarImg) {
-        avatarImg.src = avatar;
+        avatarImg.src = "/frontend/" + avatar;
     }
 
     // Avatar shown inside profile dropdown
     const profileMenuAvatar = document.getElementById("profile-menu-avatar");
     if (profileMenuAvatar) {
-        profileMenuAvatar.src = avatar;
+        profileMenuAvatar.src = "/frontend/" + avatar;
     }
 
     // Highlight selected avatar in picker
